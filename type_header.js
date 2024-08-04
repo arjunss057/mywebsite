@@ -1,27 +1,21 @@
+// typetitle()
+
 var i=0;
 var content = "Arjun S S";
 var len = content.length;
-function foo(){
+function typetitle(){
     if (i<len){
         document.getElementById("titles").innerHTML += content.charAt(i);
         i++;
-        setTimeout(foo, 200);
+        setTimeout(typetitle, 200);
     }
 }
+
+// typeinout()
 
 var listofcontents = ["Web Developer", "Python Developer", "Editor", "Musician"]
 var j = 0;
 var k = 0;
-// function typeinout(){
-//     var content = listofcontents[j];
-//     var contentlength = content.length;
-//     if(k < contentlength){
-//         document.getElementById("msgs").innerHTML += "in-if j, k = " + j + k + " | ";
-//         k++;
-//         setTimeout(typeinout, 100);
-//     }
-//     document.getElementById("msgs").innerHTML += "out-if" + j + k + " | ";
-// }
 
 function typeinout(){
     var content = listofcontents[j];
@@ -38,35 +32,18 @@ function typeinout(){
         if (j==3){
             k=0;
             j=0;
-            setTimeout(typeinout, 750);
+            setTimeout(typeinout, 3000);
         }
         else {
             k=0;
             j++;
-            setTimeout(typeinout, 750);
+            setTimeout(typeinout, 3000);
         }
         
     }
-    // else{
-    //     k=0;
-    //     j=0;
-    //     document.getElementById("msgs").innerHTML = "else case";
-    //     setTimeout(typeinout, 750);
-    // }
 }
 
-function stay_there(){
-    document.getElementById("msgs").innerHTML = "Staying there";
-}
-// var draw_content = "Hacked version##";
-// var len_draw = draw_content.length;
-// function drawing(){
-//     if(j<len_draw){
-//         document.getElementById("msgs").innerHTML += draw_content.charAt(j);
-//         j++;
-//         setTimeout(drawing, 100);
-//     }   
-// }
+//himsg()
 
 var a=0;
 var msg_hi = "Hi...";
@@ -79,6 +56,8 @@ function himsg(){
     }
 }
 
+//welcomemsg()
+
 var b=0;
 var msg_wel = "Welcome to my world!";
 var len_msg_wel = msg_wel.length;
@@ -90,13 +69,18 @@ function welcomemsg(){
     }
 }
 
+//quotedisplay()
+
 var q=0;
-var quote_msg = "\"All is well that ends well\"- Anonymous";
-var len_quote = quote_msg.length;
+var quote_msg = ["\"Process is more important than results...\" - MS Dhoni", "\"All is well that ends well.\" - William Shakespeare", "\"Things are unknown unless explored...\"", "\"Trust & Enjoy the process...\"", "\"Dreams tranform into thoughts, and thoughts result in action\" - Dr. APJ Abdul Kalam", "\"Be the change you want to see in the world...\"", "\"Life is about the journey, not the destination...\"", "\"I can do this all day\" - Captain America", "\"It is never Black and White, there has always been Shades of Grey...\""];
+var arbitrary = Math.floor(Math.random()*9);
+var len_quote = quote_msg[arbitrary].length;
 function quotedisplay(){
     if(q<len_quote){
-        document.getElementById("quote").innerHTML += quote_msg.charAt(q);
+        document.getElementById("quote").innerHTML += quote_msg[arbitrary].charAt(q);
         q++;
         setTimeout(quotedisplay, 50);
     }
 }
+
+//End
