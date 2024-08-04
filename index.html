@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="icon" type="image/x-icon" href="static/Arjun-Logo-A-1.png">
-    <script type="text/javascript" src="type_header.js"></script>
-    <!-- <script type="text/javascript" src="pointer_custom.js"></script> -->
+    <script type="text/javascript" src="type_homescreen.js"></script>
     <title>Arjun S S</title>
 </head>
 
-<body onload="foo(); typeinout(); himsg(); welcomemsg(); quotedisplay()">
+<body onload="typetitle(); typeinout(); himsg(); welcomemsg(); quotedisplay()">
 
     <div class="header">
-        <img class="logo" src="static/Arjun-Logo-A-1.png" width="60px">
-        <h2 class="title" id="titles" ></h2> <!--foo()-->
+        <div class="branding">
+            <img class="logo" src="static/Arjun-Logo-A-1.png" width="60px">
+            <h2 class="title" id="titles" ></h2> <!--typetitle()-->
+        </div>
         <div class="toplinks">
             <ul class="menubar" style="list-style-type: none">
-                <li><button class="menu-button"><a href="resume/resume.html">About</a></button></li>
+                <li><button class="menu-button" id="button1"><a href="resume/resume.html">Home</a></button></li>
                 <li><button class="menu-button"><a href="projects/projects.html">Projects</a></button></li>
                 <li><button class="menu-button"><a href="music/music.html">Music</a></button></li>
             </ul>
@@ -28,20 +29,14 @@
         <div class="message">
             <h1 id="msg1"></h1> <!--himsg()-->
             <h1 id="msg2"></h1> <!--welcomemsg()-->
-            <h2 class="new_msg" id="msgs">Full Stack Developer</h2> <!--typeinout()-->
+            <h2 class="new_msg" id="msgs"></h2> <!--typeinout()-->
             <h3 class="quotes" id="quote"></h3> <!--quotedisplay()-->
         </div>
-
-        <!-- <div class="image">
-            <img src="static/A.png" alt="Image here" width="100%">
-        </div> -->
-
         <div class="myimage">
-            <img src="static/PhotoRoom-20240717_150746.png" width="100%">
+            <img src="static/profile-pic.png" width="100%">
         </div>
     </div>
 
-    
     <footer>
         <div class="foot-notes">
             <div class="buttons">
@@ -51,25 +46,10 @@
                 <button class="footer-button"><a href="https://medium.com/@arjunss057" target="_blank">Blogs</a></button>
             </div>
             <div class="email">
-                <button class="click-to-email"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=arjunss057@gmail.com">Send an Email</a></button>
+                <button class="click-to-email"><a href="mailto:arjunss057@gmail.com">Send an Email</a></button>
             </div>
         </div>
-        <!-- <h4>Recents</h4>
-        <div class="recent-container">
-            <div class="latest1">
-                <p>Latest 1</p>
-                <img src="static/A.png" height="100px">
-            </div>
-            <div class="latest2">
-                <p>Latest 2</p>
-            </div>
-            <div class="latest3">
-                <p>Latest 3</p>
-            </div>
-        </div> -->
-        <!-- <p class="credits">(c) designed by Arjun</p> -->
     </footer>
-    
 
 </body>
 </html>
