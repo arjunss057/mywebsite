@@ -57,7 +57,8 @@ function typeTitle(){
 
 var saluteIndex=0;
 var name = window.location.hostname;
-var msg_salutation = `Hi ${window.location.hostname}!`;
+// var msg_salutation = `Hi ${window.location.hostname}!`;
+var msg_salutation = `Hi !`;
 function salute(){
     if (saluteIndex<msg_salutation.length){
         // document.getElementById("salutation").innerHTML += msg_salutation.charAt(saluteIndex);
