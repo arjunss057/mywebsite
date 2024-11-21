@@ -3,53 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="test-styles.css">
     <link rel="icon" type="image/x-icon" href="static/Arjun-Logo-A-1.png">
-    <script type="text/javascript" src="type_homescreen.js"></script>
+
+    <!-- <script type="text/javascript" src="type_homescreen.js"></script> -->
+    <script type="text/javascript" src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <title>Arjun S S</title>
 </head>
+<body onload="execute();">
+<!-- <body> -->
 
-<body onload="typetitle(); typeinout(); himsg(); welcomemsg(); quotedisplay()">
-
-    <div class="header">
-        <div class="branding">
-            <img class="logo" src="static/Arjun-Logo-A-1.png" width="60px">
-            <h2 class="title" id="titles" ></h2> <!--typetitle()-->
+    <header>
+        <div class="brand">
+           <img src="static/Arjun-Logo-A-1.png" height="100%">
+           <h1 id="page-title"></h1>
         </div>
-        <div class="toplinks">
-            <ul class="menubar" style="list-style-type: none">
-                <li><button class="menu-button" id="button1"><a href="resume/resume.html">Home</a></button></li>
-                <li><button class="menu-button"><a href="projects/projects.html">Projects</a></button></li>
-                <li><button class="menu-button"><a href="music/music.html">Music</a></button></li>
-            </ul>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="pristina-safe.html" target="_blank">Projects</a>
+            <a href="https://youtube.com/c/ArjunTuneIns" target="_blank">Music</a>
+        </nav>
+    </header>
+    <div class="homepage">
+        <div class="text-content">
+            <div class="content">
+                <h1 id="salutation"></h1>
+                <h1 id="welcome"></h1>
+                <h1 id="designation"></h1>
+            </div>
+            <fieldset class="quote-bar" id="quote-bar">
+                <legend>&nbsp; Random thought &nbsp;</legend>
+                <h1 id="quote-text"></h1>
+                <a id="refresh-quote" >Shuffle Quote</a>
+            </fieldset>
+            <script src="script.js"></script>
+        </div>
+        <div class="image">
+            <img src="static/profile-pic.png" height="100%">
         </div>
     </div>
-
-    <div class="intro" >
-        <div class="message">
-            <h1 id="msg1"></h1> <!--himsg()-->
-            <h1 id="msg2"></h1> <!--welcomemsg()-->
-            <h2 class="new_msg" id="msgs"></h2> <!--typeinout()-->
-            <h3 class="quotes" id="quote"></h3> <!--quotedisplay()-->
-        </div>
-        <div class="myimage">
-            <img src="static/profile-pic.png" width="100%">
-        </div>
-    </div>
-    <p>Hello this is edited</p>
     <footer>
-        <div class="foot-notes">
-            <div class="buttons">
-                <button class="footer-button"><a href="https://www.linkedin.com/in/arjunss057" target="_blank">LinkedIn</a></button>
-                <button class="footer-button"><a href="https://www.behance.net/arjunss057" target="_blank">Behance</a></button>
-                <button class="footer-button"><a href="https://www.github.com/arjunss057" target="_blank">GitHub</a></button>
-                <button class="footer-button"><a href="https://medium.com/@arjunss057" target="_blank">Blogs</a></button>
-            </div>
-            <div class="email">
-                <button class="click-to-email"><a href="mailto:arjunss057@gmail.com">Send an Email</a></button>
-            </div>
+        <div class = foot-nav>
+            <a href="https://www.linkedin.com/in/arjunss057" target="_blank">LinkedIn</a>
+            <a href="under-development.html">Behance</a>
+            <a href="https://www.github.com/arjunss057" target="_blank">GitHub</a>
+            <a href="under-development.html">Blogs</a>
         </div>
+        <a class="mail-button" href="mailto:arjunss057@gmail.com">Send an Email</a>
     </footer>
+    <p id="log-data"></p>
 
+    
+    
 </body>
 </html>
