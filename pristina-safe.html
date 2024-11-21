@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Tool :: Public</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .top-border, .bottom-border{
+            background-color: #740938;
+            
+            height: 12px;
+            min-width: 400px;
+        }
+        
+        header{
+            padding: 12px;
+            background-color: #DE7C7D;
+            min-width: 400px;
+        }
+        .container{
+            width: 400px;
+            padding: 12px;
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+            border-radius: 4px;
+            margin: 24px auto;
+            background-color: #ecc1c2;
+        }
+        .ping{
+            text-align: center;
+            font-weight: 700;
+            color:#740938;
+        }
+        .container-encrypt{
+            margin: 12px;
+            padding: 12px;
+            border-width: 1px;
+            border-style: solid;
+            background-color: rgb(255, 255, 255);
+            transition: 0.2s;
+        }
+        
+        .container-encrypt:hover{
+            box-shadow: 1px 1px 12px #740938, -1px 1px 12px #740938;
+        }
+        
+        .container-encrypt-input{
+            border-radius: 8px;   
+        }
+        
+        .encrypt-form{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .input-1, .input-2{
+            display: flex;
+            flex-direction: column;
+            margin: 12px;
+        }
+        
+        .input-1 input, .input-2 input{
+            height: 32px;
+            font-family: monospace;
+            font-size: 14px;
+            border-radius: 4px;
+            padding: 0px 12px;
+            transition: 0.2s;
+        }
+        
+        .input-1 input:hover, .input-2 input:hover,
+        .input-1 input:active, .input-2 input:active{
+            box-shadow: 1px 1px 10px #DE7C7D, -1px 1px 10px #DE7C7D;
+        }
+        
+        .input-1 label, .input-2 label{
+            margin: 4px auto;
+        
+        }
+
+        .key-split{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-self: center;
+        }
+        .key-split input{
+            width: 50px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+        .input-3{
+            margin: 10px;
+            align-self: center;
+            accent-color: #740938;
+        }
+        
+        .input-3 label:hover{
+            box-shadow: 1px 1px 10px #DE7C7D, -1px 1px 10px #DE7C7D;
+             background-color: #ebadad;
+            transition: 0.25s;
+        }
+        
+        .fetch{
+            border: none;
+            padding: 12px;
+            width: 100px;
+            align-self: center;
+            margin: 12px;
+            border-radius: 8px;
+            background-color: #DE7C7D;
+            transition: 0.25s;
+        }
+        
+        .fetch:hover{
+            box-shadow:1px 1px 10px #DE7C7D, -1px 1px 10px #DE7C7D;
+            background-color: whitesmoke;
+            color:black ;
+        }
+        
+        .fetch:active{
+            background-color: black;
+            color:#DE7C7D ;
+        }
+        
+        .container-encrypt-output{
+            display: flex;
+            flex-direction: column;
+            margin: 12px;
+        }
+        
+        .container-encrypt-output p{
+            align-self: center;
+            margin-bottom: 4px;
+        }
+        
+        
+        .output{
+            padding: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            border-radius: 4px;
+            background-color: black;
+            color: white;
+            border-style: none;
+        }
+        
+        .output-legend{
+            font-family: monospace;
+            font-weight: 500;
+            font-size: 14px;
+            animation-name: console;
+            animation-duration: 1200ms;
+            animation-iteration-count: infinite;
+        }
+        
+        .output p{
+            align-self: center;
+            justify-self: center;
+            font-family: monospace;
+            min-height: 16px;
+        }
+        
+        .copy{
+            border: none;
+            padding: 4px;
+            width: 70px;
+            align-self: center;
+            margin: 8px;
+            background-color: #f8e5e5;
+            border-style: groove;
+            border-color: #DE7C7D;
+            border-radius: 4px;
+            transition: 0.25s;
+        }
+        
+        .copy:hover{
+            box-shadow:1px 1px 10px #DE7C7D, -1px 1px 10px #DE7C7D;
+            background-color: whitesmoke;
+            color:black ;
+        }
+        
+        .copy:active{
+            background-color: black;
+            color:rgb(134, 212, 134) ;
+        }
+        
+        .reset-form{
+            text-align: center;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        
+        .reset-form:hover{
+            opacity: 50%;
+            cursor: pointer;
+        }
+        
+        footer{
+            text-align: center;
+            min-width: 400px;
+        }
+
+        .note{
+            display: flex;
+            justify-self: center;
+            color: #740938;
+
+            animation-name: blink;
+            animation-duration: 1.9s;
+            animation-iteration-count: infinite;
+        }
+        
+        /* Animations */
+        
+        @keyframes console{
+            0% {opacity: 1;}
+            50% {opacity: 0.4;}
+            100% {opacity: 1;}
+        }
+
+        @keyframes blink{
+            0% {opacity: 1;}
+            50% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <p class="top-border"></p>
+    <header>
+        <h2>PrimeTool</h2>
+    </header>
+    <div class="note">
+        <h3>Projects Section is under development. More Projects will be uploaded soon...</h3>
+    </div>
+    <div class="container">
+        <p class="ping">PristinaSafe</p>
+        <section class="container-encrypt">
+            <div class="container-encrypt-input">
+                <div class="encrypt-form" id="input-form">
+                    <article class="input-1">
+                        <label for="input-text-1">Enter the text</label>
+                        <input id="input-text-1" type="text">
+                    </article>
+                    <article class="input-2">
+                        <label>Enter Security Key</label>
+                        <div class="key-split">
+                            <input
+                                name="security-keyy"
+                                type="password"
+                                required
+                                maxlength="3"
+                                default = "0"
+                            >
+                            <input
+                                name="security-keyy"
+                                type="password"
+                                required
+                                maxlength="3"
+                                default = "0"
+                            >
+                            <input
+                                name="security-keyy"
+                                type="password"
+                                required
+                                maxlength="3"
+                                default = "0"
+                            >
+                        </div>
+                    </article>
+                    <article class="input-3">
+                        <input id="encrypt-function" type="radio" value="encrypt-function" name="function-action">
+                        <label for="encrypt-function">Encrypt</label>
+                        <input id="decrypt-function" type="radio" value="decrypt-function" name="function-action">
+                        <label for="decrypt-function">Decrypt</label>
+                    </article>
+                    <button id="function-call" class="fetch" onclick="master();" type="submit">Fetch Text</button>
+                </div>
+            </div>
+            <div class="container-encrypt-output">
+                <p id="output-legend" class="output-legend">Ready</p>
+                <fieldset id="output-text" class="output">
+                    <p id="fetched"></p>
+                </fieldset>
+                <button id="copy-function" class="copy" onclick="clipboard();">Copy</button>
+            </div>
+        </section>
+        <p id="reset-form" class="reset-form" onclick="refresh();">Reset</p>
+    </div>
+    <footer>
+        <p>The correctness of encryption/decryption depends on the security key!</p>
+    </footer>
+    <p class="bottom-border"></p>
+    <p>(c) Designed & created by Arjun S S</p>
+    <script>
+        function encrypt(text, key){
+            try{
+                var shift = 0;
+                for(let j=0; j<key.length; j++){
+                    var calc = ((-1)**j)*key[j];
+                    shift = shift + calc;
+                }
+                shift = Math.abs(shift);
+                var enc = ``;
+                for(let i=0; i<text.length; i++){
+                    var x = `${text[i]}`.charCodeAt(0);
+                    var xid = x + shift;
+                    enc = enc + String.fromCharCode(xid);
+                }
+                if(enc.length!=text.length){
+                    console.log("Encryption error");
+                    document.getElementById("fetched") = "Encryption error";
+                    document.getElementById("output-legend").innerHTML = "Error!";
+                    return "Encryption error";
+                }
+                else{
+                    console.log("Encryption Successful");
+                    document.getElementById("fetched").innerHTML = enc;
+                    document.getElementById("output-legend").innerHTML = "Encryption Successful";
+                    return enc;
+                }
+            }
+            catch(err){
+                console.log("Encryption failed");
+                document.getElementById("fetched").innerHTML = "Encryption failed";
+                document.getElementById("output-legend").innerHTML = "Error!";
+                return "Encryption failed";
+            }
+        }
+        
+        function decrypt(text, key){
+            try{
+                shift = 0;
+                for(let j=0; j<key.length; j++){
+                    var calc = ((-1)**j)*key[j];
+                    shift = shift + calc;
+                }
+                var dec = ``;
+                for(let i=0; i<text.length; i++){
+                    var y = `${text[i]}`.charCodeAt(0);
+                    var yId = y - shift;
+                    dec = dec + String.fromCharCode(yId);
+                }
+                if(dec.length!=text.length){
+                    console.log("Decryption error");
+                    document.getElementById("fetched") = "Decryption error";
+                    document.getElementById("output-legend").innerHTML = "Error!";
+                    return "Decryption error";
+                }
+                else{
+                    console.log("Decryption Successful");
+                    document.getElementById("fetched").innerHTML = dec;
+                    document.getElementById("output-legend").innerHTML = "Decryption Successful";
+                    return dec;
+                }
+            }
+            catch(err){
+                console.log("Decryption failed");
+                document.getElementById("fetched").innerHTML = "Decryption failed";
+                document.getElementById("output-legend").innerHTML = "Error!";
+                return "Decryption failed";
+            }
+        }
+        
+        function master(){
+            reset();
+            try{
+                var data = document.getElementById("input-text-1").value;
+                var key = document.getElementsByName("security-keyy");
+                var p = 0;
+                var secKey = [];
+                for(let item=0; item<key.length; item++){
+                    for(let c=0; c<key[item].length; c++){
+                        if(key[item][c] in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]){
+                            p = 1;
+                        }
+                        else{
+                            console.log("Invalid Security Key");
+                            document.getElementById("fetched").innerHTML = "Invalid security key";
+                            document.getElementById("output-legend").innerHTML = "Error!";
+                            return "Invalid Security Key";
+                        }
+                    }
+                    secKey.push(Number(key[item].value));
+                }
+                var process = document.querySelector("input[type='radio'][name=function-action]:checked").value;
+                if(process=="encrypt-function"){
+                    var f = encrypt(data, secKey);
+                }
+                else{
+                    var f = decrypt(data, secKey);
+                }
+                return f;
+            }
+            catch(err){
+                console.log("Invalid Input");
+                document.getElementById("fetched").innerHTML = "Invalid input";
+                document.getElementById("output-legend").innerHTML = "Error!";
+                return "Invalid input";
+            }
+        }
+        
+        function clipboard(){
+            var content = master();
+            navigator.clipboard.writeText(content);
+            document.getElementById("copy-function").innerHTML = "Copied!";
+            console.log("Copied");
+        }
+        
+        function reset(){
+            document.getElementById("copy-function").innerHTML = "Copy";
+        }
+        
+        function refresh(){
+            location.reload();
+        }
+    </script>
+</body>
+</html>

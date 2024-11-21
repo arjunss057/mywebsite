@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="test-styles.css"> -->
+    <link rel="stylesheet" href="about1-styles.css">
+    <link rel="icon" type="image/x-icon" href="static/Arjun-Logo-A-1.png">
+
+    <!-- <script type="text/javascript" src="type_homescreen.js"></script> -->
+    <script type="text/javascript" src="script.js"></script>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <title>503:Service Unavailable</title>
+
+    <style>
+        .uc-msg{
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .uc-img{
+            width: 400px;
+            margin-top: 30px;
+
+            animation-name: uc-load;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes blink {
+            0%  {opacity: 0.6; transform: scale(0.93);}
+            50% {opacity: 1; transform: scale(1);}
+            100%{opacity: 0.6; transform: scale(0.93);}
+        }
+
+        @keyframes uc-load {
+            0% {
+                opacity: 1; 
+                transform: scale(1);
+            }
+            5% {
+                opacity: 0.6;
+                transform: scale(0.93);
+            }
+            12%{
+                opacity: 0.6;
+                transform: scale(0.93);
+                rotate: 120deg;
+            }
+            22%{
+                opacity: 1;
+                transform: scale(1);
+                rotate: 120deg;
+            }
+            33%{
+                opacity: 1;
+                transform: scale(1);
+                rotate: 120deg;
+            }
+            38%{
+                opacity: 0.6;
+                transform: scale(0.93);
+                rotate: 120deg;
+            }
+            45%{
+                opacity: 0.6;
+                transform: scale(0.93);
+                rotate: 240deg;
+            }
+            55%{
+                opacity: 1;
+                transform: scale(1);
+                rotate: 240deg;
+            }
+            66%{
+                opacity: 1;
+                transform: scale(1);
+                rotate: 240deg;
+            }
+            71%{
+                opacity: 0.6;
+                transform: scale(0.93);
+                rotate: 240deg;
+            }
+            78%{
+                opacity: 0.6;
+                transform: scale(0.93);
+                rotate: 360deg;
+            }
+            88%{
+                opacity: 1;
+                transform: scale(1);
+                rotate: 360deg;
+            }
+            100%{
+                opacity: 1;
+                transform: scale(1);
+                rotate: 360deg;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+           <img src="static/Arjun-Logo-A-1.png" height="100%">
+           <h1 id="page-title" onclick="">Error: 503</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pristina-safe.html" target="_blank">Projects</a>
+            <a href="https://youtube.com/c/ArjunTuneIns" target="_blank">Music</a>
+        </nav>
+    </header>
+    <div class="uc-msg">
+        <div class="uc-img">
+            <!-- <img src="static/cog-wheel.png" width="100%"> -->
+            <img src="static/settings.png" width="100%">
+
+        </div>
+        <p>This Page is under development</p>
+    </div>
+    <footer style="margin-top: 20px;">
+        <div class = foot-nav>
+            <a href="index.html">Back</a>
+            <a href="https://www.linkedin.com/in/arjunss057" target="_blank">LinkedIn</a>
+            <!-- <a href="https://www.behance.net/arjunss057" target="_blank">Behance</a> -->
+            <!-- <a href="https://www.github.com/arjunss057" target="_blank">GitHub</a> -->
+            <!-- <a href="https://www.medium.com/@arjunss057" target="_blank">Blogs</a>  -->
+        </div>
+        <a class="mail-button" href="mailto:arjunss057@gmail.com">Send an Email</a>
+    </footer>
+</body>

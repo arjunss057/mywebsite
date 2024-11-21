@@ -1,0 +1,237 @@
+/* Stylesheet */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    /* background: radial-gradient( #F5FBEB, #D4EEA9); */
+    /* background: radial-gradient(circle at 35% , green, white, green 20%, white 40%, green ); */
+    background: linear-gradient(#d6efa3, #efffcf, #c7ecdd);
+    /* background: linear-gradient(#efeea3, #efffcf, #ecc7c7); */
+    /* background-size: 50% 50%; */
+    /* background-repeat: no-repeat; */
+    font-family: 'inconsolata', monospace;
+    color: black;
+
+    cursor: url('static/click-static.png'), auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: url('static/click-onclick.png'), auto;
+}
+
+a:visited{
+    color: white;
+}
+
+header{
+    width: device-width;
+    height: 5vw;
+    background-color: black;
+    color: white;
+    margin: 0.3vw;
+    border-radius: 8px;
+
+    display: grid;
+    grid-template-columns: 6fr 5fr;
+    align-items: center;
+
+    cursor: url('static/click-white.png'), auto;
+}
+
+.brand{
+    height: 5vw;
+    width: 100%;
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+}
+
+.brand img{
+    align-self: center;
+    padding: 0.5vw;
+}
+
+.brand h1{
+    align-self: center;
+    margin-left: 0.5vw;
+    font-size: 32px;
+
+}
+
+#page-title{
+    animation-name: blink;
+    animation: forwards;
+    animation-duration: 10s;
+}
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+nav a, .foot-nav a, .mail-button{
+    font-size: 18px;
+    margin: 4px;
+    padding: 16px;
+    background-color: #020912;
+    color: white;
+    width: 80%;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+nav a:hover, .foot-nav a:hover, .mail-button:hover{
+    transform: scale(1.2);
+    background-color: #d6efa3;
+    color: black;
+    font-weight: 500;
+}
+
+nav a:active, .foot-nav a:active, .mail-button:active{
+    background-color: white;
+    font-weight: 300;
+    cursor: url('static/click-active.png'), auto;
+}
+
+.homepage{
+    display: grid;
+    grid-template-columns: 7fr 4fr;
+    margin-top: 5vw;
+}
+
+.text-content{
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+}
+
+.content{
+    /* color: white; */
+    padding: 5vw;
+    /* padding-top: 7vw; */
+    /* padding-bottom: 7vw; */
+    padding-left: 10vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    /* background-color: bisque; */
+}
+
+.content #salutation {
+    font-size: 36px;
+}
+
+.content #welcome{
+    font-size: 32px;
+    
+}
+
+.content #designation{
+    font-size: 28px;
+}
+
+
+.quote-bar{
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    /* background-color: aqua; */
+    margin: 1vw;
+    padding-left: 5vw;
+    align-items: center;
+    border-width: 2px;
+    border-color: #020912;
+    border-style: solid;
+}
+
+#quote-text{
+    font-size: 18px;
+}
+
+.quote-bar a{
+    padding: 0.5vw;
+    text-align: center;
+    animation-name: load-delay ;
+    border-radius: 8px;
+    animation-duration: 10s;
+    transition: 0.4s;
+}
+
+.quote-bar a:hover{
+    color: black;
+    padding: 0.8vw;
+    transform: scale(1.1);
+}
+
+.quote-bar a:visited{
+    color: black;
+}
+.quote-bar a:active{
+    color: white;
+    cursor: url('static/click-active.png'), auto;
+}
+
+
+.image{
+    height: 30vw;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    background-color: black;
+    height: 5vw;
+    margin: 0.3vw;
+    margin-top: 0px;
+    border-radius: 8px;
+    align-items: center;
+
+    cursor: url('static/click-white.png'), auto;
+}
+.foot-nav{
+    /* padding-left: 10%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.foot-nav a, .mail-button{
+    width: 70%;
+    justify-self: center;
+}
+
+.foot-nav a:hover, .mail-button:hover{
+    background-color: #c7ecdd;
+}
+
+
+
+/* Animations */
+
+@keyframes load-delay{
+    0%  {opacity: 0;}
+    95% {opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes blink{
+    0% {opacity: 0;}
+    20%{opacity: 1;}
+    40%{opacity: 0;}
+    60%{opacity: 1;}
+    80%{opacity: 0;}
+    90%{opacity: 1;}
+    95%{opacity: 0;}
+    100%{opacity: 1;}
+}
